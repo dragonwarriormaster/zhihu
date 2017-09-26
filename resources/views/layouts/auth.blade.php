@@ -2,8 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>zhihu</title>
@@ -17,32 +16,33 @@
             -o-background-size: cover;
         }
 
+        .auth-header a{
+            color: #444444;
+            text-decoration: none;
+            background-color: #FFFFFF;
+            padding: 5px 13px;
+            font-size: 14px;
+            font-weight: bold;
+            border-style: none;
+            border-radius: 3px;
+        }
+        .auth-header a:hover {
+            color: #444444;
+            background-color: #FFFFFF;
+        }
+
         .logo {
             font-weight: bold;
             font-family: serif;
         }
 
-        .passport-form {
+        .auth-form {
             /*固定宽度然后使用 mx-auto*/
             width: 300px;
             margin-top: 100px;
         }
-        .passport-form>form>div>input {
+        .auth-form>div>input {
             border: transparent;
-        }
-        .auth-btn {
-            padding: 5px 13px;
-            color: #444;
-            background-color: #ffffff;
-            border:transparent;
-            border-radius: 2px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .auth-btn:hover {
-            color: #444;
-            background-color: #ffffff;
-            text-decoration: none;
         }
         .password-reset {
             color: #ffffff;
@@ -54,6 +54,13 @@
 </head>
 <body>
     <div id="app">
+        <div class="auth-header text-right mt-3 mr-4">
+            @if (Route::currentRouteName() === 'login')
+                <a href="{{ route('register') }}">注册</a>
+            @else
+                <a href="{{ route('login') }}">登录</a>
+            @endif
+        </div>
         @yield('content')
     </div>
 
