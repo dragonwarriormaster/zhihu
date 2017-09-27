@@ -57,7 +57,10 @@
         <div class="auth-header text-right mt-3 mr-4">
             @if (Route::currentRouteName() === 'login')
                 <a href="{{ route('register') }}">注册</a>
+            @elseif (Route::currentRouteName() === 'register')
+                <a href="{{ route('login') }}">登录</a>
             @else
+                <a href="{{ route('register') }}" class="mr-2">注册</a>
                 <a href="{{ route('login') }}">登录</a>
             @endif
         </div>
