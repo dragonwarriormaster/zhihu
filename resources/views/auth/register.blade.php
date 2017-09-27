@@ -97,7 +97,7 @@
                 <input type="password" name="password-confirmation" class="form-control" placeholder="确认密码" required>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">注册</button>
+                <button type="submit" class="btn btn-primary btn-block" style="cursor: pointer;">注册</button>
             </div>
         </form>
     </div>
